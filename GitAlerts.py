@@ -107,12 +107,13 @@ def connect(update: Update, context: CallbackContext):
         message.reply_text("Kindly give your group id")
     x = re.search("^-100", text)
 
-    if x and text !='':
-        reply_text = f"Payload url: `https://{HEROKU_APPNAME}.herokuapp.com//{text}` \n\nSend /morehelp for more help."
-        message.reply_text(reply_text, parse_mode=ParseMode.MARKDOWN)
-    else:
-        reply_texto = "Wrong chat id! it must start with -1001 or -100"
-        message.reply_text(reply_texto)
+    if x:
+      if text!='':
+            reply_text = f"Payload url: `https://{HEROKU_APPNAME}.herokuapp.com//{text}` \n\nSend /morehelp for more help."
+            message.reply_text(reply_text, parse_mode=ParseMode.MARKDOWN)
+        else:
+            reply_texto = "Wrong chat id! it must start with -1001 or -100"
+            message.reply_text(reply_texto)
 
 def more_help(update: Update, context: CallbackContext):
     tt = "1.Go to repo settings \n2.Find webhooks there \n3.Add Payload url there \n\n4. Change content type to application/json \n\n5.Which events would you like to trigger this webhook? \nâ€¢ Choose 1st or 2nd option \n\n6. Add webhook \n7. Done!"

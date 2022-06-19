@@ -103,8 +103,8 @@ def connect(update: Update, context: CallbackContext):
     message = update.effective_message
     text = message.text[len("/connect ") :]
 
-    if not text:
-        reply_text = "Kindly give some text"
+    if text =='':
+        message.reply_text("Kindly give your group id")
     x = re.search("^-100", text)
 
     if x:

@@ -42,7 +42,7 @@ else:
 updater = Updater(token=BOT_TOKEN, workers=1)
 dispatcher = updater.dispatcher
 
-print("If you need more help, join @ScenarioXsupport in Telegram.")
+log.info("If you need more help, join @ScenarioXsupport in Telegram.")
 
 xa = bytearray.fromhex("54 65 61 6D 53 63 65 6E 61 72 69 6F 2F 47 69 74 41 6C 65 72 74 73").decode()
 axx = bytearray.fromhex("43 6F 64 65 72 58").decode()
